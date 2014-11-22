@@ -1,0 +1,13 @@
+# On Chef 10.34.4, this will produce `!ruby/hash:Mash`
+# On Chef 11.16.4, this will produce `!ruby/array:Chef::Node::ImmutableArray`
+<%= YAML.dump({ 'instances' => @instances }) %>
+
+---------------------------------------------------------------------------
+# On Chef 10.34.4, this will produce `!ruby/hash:Mash` on nested Mashes
+# On Chef 11.16.4, this will produce a clean yaml file
+<%= YAML.dump({ 'instances' => @instances.map { |item| item.to_hash } }) %>
+
+---------------------------------------------------------------------------
+# On Chef 10.34.4, this will produce a clean yaml file
+# On Chef 11.16.4, this will produce a clean yaml file
+<%= JSON.parse(({ 'instances' => @instances }).to_json).to_yaml %>

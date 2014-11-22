@@ -1,0 +1,7 @@
+name             'repro'
+maintainer       'Mike Fiedler'
+maintainer_email 'miketheman@gmail.com'
+license          'all_rights'
+description      'Installs/Configures repro'
+long_description 'Installs/Configures repro'
+version          '0.1.0'
